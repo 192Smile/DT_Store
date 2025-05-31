@@ -2,35 +2,77 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>DT_Store</title>
+  <title>متجر DT_Store</title>
   <style>
     body {
-      background-color: #121212;
-      color: white;
-      font-family: sans-serif;
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 50px;
+      padding: 40px;
     }
-    .app-icon {
-      margin: 20px;
+    #mainContent {
+      display: none;
     }
-    img {
+    input {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .app-img {
       width: 100px;
-      height: 100px;
-      border-radius: 20px;
+      margin: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>مرحباً بك في DT_Store</h1>
-  <p>ادخل كود التفعيل للمتابعة: <strong>ASIEL10282025MAYODT</strong></p>
-  <div class="apps">
-    <div class="app-icon">
-      <a href="https://example.com/youtube.ipa"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube"></a>
-    </div>
-    <div class="app-icon">
-      <a href="https://example.com/instagram.ipa"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
-    </div>
+
+  <h1>مرحبًا بك في متجر DT_Store</h1>
+
+  <div id="activation">
+    <p>ادخل كود التفعيل للمتابعة</p>
+    <input type="text" id="codeInput" placeholder="اكتب الكود هنا">
+    <br>
+    <button onclick="checkCode()">تأكيد</button>
+    <p id="errorMessage" style="color:red;"></p>
   </div>
+
+  <div id="mainContent">
+    <h2>تم التفعيل بنجاح ✅</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_squircle_%282017%29.svg" class="app-img" alt="YouTube">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="app-img" alt="Instagram">
+    <img src="https://upload.wikimedia.org/wikipedia/ar/6/6b/Snapchat_Logo.png" class="app-img" alt="Snapchat">
+
+    <p><a href="https://your-download-link.com">تحميل YouTube++</a></p>
+    <p><a href="https://your-download-link.com">تحميل Instagram++</a></p>
+    <p><a href="https://your-download-link.com">تحميل Snapchat++</a></p>
+  </div>
+
+  <script>
+    function checkCode() {
+      const correctCode = "ASIEL10282025MAYODT";
+      const input = document.getElementById("codeInput").value;
+      const error = document.getElementById("errorMessage");
+
+      if (input === correctCode) {
+        document.getElementById("activation").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+      } else {
+        error.textContent = "❌ الكود غير صحيح، حاول مرة أخرى.";
+      }
+    }
+  </script>
+
 </body>
 </html>
