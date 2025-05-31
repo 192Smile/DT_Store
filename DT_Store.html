@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>DT_Store</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        input {
+            width: 250px;
+        }
+        button {
+            background-color: #1E88E5;
+            color: white;
+            cursor: pointer;
+        }
+        .app {
+            margin: 20px;
+            display: inline-block;
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            padding: 15px;
+            width: 200px;
+        }
+        .app img {
+            width: 100px;
+            height: 100px;
+        }
+        #apps-section {
+            display: none;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DT_Store</h1>
+    <p>أدخل رمز التفعيل للوصول إلى التطبيقات</p>
+    <input type="text" id="codeInput" placeholder="رمز التفعيل">
+    <button onclick="checkCode()">تأكيد</button>
+
+    <div id="apps-section">
+        <div class="app">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube">
+            <p>YouTube++</p>
+            <a href="https://example.com/youtube.ipa" download><button>تحميل</button></a>
+        </div>
+        <div class="app">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            <p>Instagram++</p>
+            <a href="https://example.com/instagram.ipa" download><button>تحميل</button></a>
+        </div>
+        <div class="app">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/ad/Snapchat_logo.svg" alt="Snapchat">
+            <p>Snapchat++</p>
+            <a href="https://example.com/snapchat.ipa" download><button>تحميل</button></a>
+        </div>
+    </div>
+
+    <script>
+        function checkCode() {
+            var code = document.getElementById("codeInput").value;
+            if (code === "ASIEL10282025MAYODT") {
+                document.getElementById("apps-section").style.display = "block";
+            } else {
+                alert("رمز التفعيل غير صحيح");
+            }
+        }
+    </script>
+</body>
+</html>
